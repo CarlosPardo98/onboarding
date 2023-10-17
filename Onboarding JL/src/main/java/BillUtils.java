@@ -1,8 +1,8 @@
-package org.example;
-
 import java.math.BigDecimal;
 
+
 public class BillUtils {
+
 
     /*
     In this exercise you have to create a type of class that is really common in OOP: a utility class.
@@ -34,10 +34,9 @@ public class BillUtils {
     // TODO: Create a function that receives a Bill instance and returns the total amount of its products [STREAMS]
 
     public static BigDecimal calculateTotalAmountUsingStreamsBasedModel(Bill bill) {
-        return bill.getProducts().keySet()
+        return bill.getProducts().values()
                 .stream()
-                .map((key) -> bill.getProducts().get(key))
-                .reduce(new BigDecimal("0.0"), BigDecimal::add);
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     // TODO: Create a function that receives a Bill instance and returns the number of products that start with the letter A [ITERATIVE]
