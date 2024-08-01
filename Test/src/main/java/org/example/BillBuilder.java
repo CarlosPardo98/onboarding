@@ -4,9 +4,29 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BillBuilder {
+public class BillBuilder implements Builder{
 
-    // TODO: Create a Builder to create Bill instances programmatically
+    // Create a Builder to create Bill instances programmatically
+
+    // Declare the attributes to create a bill
+    private String customer;
+    private Map<String, BigDecimal> products;
+
+    // Setters for those attributes
+    @Override
+    public void setCustomer(String customer) {
+        this.customer=customer;
+    }
+
+    @Override
+    public void setProducts(Map<String, BigDecimal> products) {
+        this.products=products;
+    }
+
+    // Final method to create a new bill with the designed attributes
+    public Bill getBill(){
+        return new Bill(customer, products);
+    }
 
     /*
     In this extra exercise you will implement your first design pattern: a Builder.
