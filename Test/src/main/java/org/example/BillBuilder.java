@@ -7,9 +7,12 @@ import java.util.Map;
 public class BillBuilder implements Builder{
 
     // Create a Builder to create Bill instances programmatically
+
+    // Declare the attributes to create a bill
     private String customer;
     private Map<String, BigDecimal> products;
 
+    // Setters for those attributes
     @Override
     public void setCustomer(String customer) {
         this.customer=customer;
@@ -20,23 +23,9 @@ public class BillBuilder implements Builder{
         this.products=products;
     }
 
-    public Bill getResult(){
+    // Final method to create a new bill with the designed attributes
+    public Bill getBill(){
         return new Bill(customer, products);
-    }
-
-    public static void main(String[] args) {
-        String c = "Javier Carretero";
-        Map<String, BigDecimal> p = new HashMap<>();
-        p.put("Cebolla", new BigDecimal("1.4"));
-        p.put("Tomate", new BigDecimal("2.5"));
-        p.put("Pepino", new BigDecimal("3.7"));
-        p.put("Patata", new BigDecimal("5.5"));
-        p.put("Pimienta", new BigDecimal("3.4"));
-        BillBuilder b = new BillBuilder();
-        b.setCustomer(c);
-        b.setProducts(p);
-        Bill bill = b.getResult();
-        System.out.println(bill.toString());
     }
 
     /*
