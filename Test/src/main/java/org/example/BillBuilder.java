@@ -3,8 +3,9 @@ package org.example;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
-public class BillBuilder {
+import org.example.Bill;
+import org.example.Builder;
+public class BillBuilder implements Builder{
 
     // TODO: Create a Builder to create Bill instances programmatically
 
@@ -22,5 +23,18 @@ public class BillBuilder {
 
     You will have to explain your solution to the team once it is ready. Good luck! ;-D
      */
+    private String customer;
+    private Map<String,BigDecimal> products;
 
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public void setProducts(Map<String, BigDecimal> products) {
+        this.products = products;
+    }
+
+    public Bill getResult(){
+        return new Bill(customer, products);
+    }
 }
