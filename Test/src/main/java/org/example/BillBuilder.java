@@ -1,12 +1,26 @@
-package org.example;
+package src.main.java.org.example;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 public class BillBuilder {
+    private String name;
+    private Map<String, BigDecimal> productAndPrices;
 
     // TODO: Create a Builder to create Bill instances programmatically
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProductAndPrices(Map<String, BigDecimal> productAndPrices) {
+        this.productAndPrices = productAndPrices;
+    }
+
+    public Bill getResult() {
+        return new Bill(name, productAndPrices);
+    }
 
     /*
     In this extra exercise you will implement your first design pattern: a Builder.

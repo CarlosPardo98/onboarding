@@ -1,6 +1,8 @@
+package src.test.java;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.example.Bill;
+import src.main.java.org.example.Bill;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
